@@ -1,0 +1,28 @@
+// Recursive function to find the nth Fibonacci number
+#include <stdio.h>
+
+int fibonacci_recursive(int n) {
+    if (n <= 1) {
+        return n; // Base case: 0th term is 0, 1st term is 1
+    }
+    return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2);
+}
+
+int main() {
+    int n;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Please enter a positive integer.\n");
+    } else {
+        // 2. Call Recursive Method
+        printf("Recursive Fibonacci Series: ");
+        for (int i = 0; i < n; i++) {
+            printf("%d ", fibonacci_recursive(i));
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
